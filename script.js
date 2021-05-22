@@ -52,9 +52,14 @@ const updateCountdown = (e) => {
   countdownTitle = e.srcElement[0].value;
   countdownDate = e.srcElement[1].value;
 
-  // get number verison of current date, updateDOM
-  countdownValue = new Date(countdownDate).getTime();
-  updateDOM();
+  //check for valid date
+  if (countdownDate === "") {
+    alert("please select a date");
+  } else {
+    // get number verson of current date, updateDOM
+    countdownValue = new Date(countdownDate).getTime();
+    updateDOM();
+  }
 };
 
 // reset all values
